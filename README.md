@@ -12,6 +12,5 @@ Displaying curent day of month
 Possible User interaction:
 -> changing month
 
-
 Bugs:
 - Not responsible for different screensizes (Optimized for 1280px*960px)
