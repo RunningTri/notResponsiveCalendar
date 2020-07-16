@@ -1,5 +1,7 @@
 let date = new Date();
 
+//let selectedDates = "";
+
 function renderCalendarView() {
 
     const month = date.getMonth();
@@ -53,9 +55,9 @@ function renderCalendarView() {
         if (i === new Date().getDate() 
             && date.getMonth() === new Date().getMonth()
             && date.getFullYear() === new Date().getFullYear()) {
-            days += `<div class="today">${i}</div>`;
+            days += `<div class="today currentMonth">${i}</div>`;
         } else {
-            days += `<div>${i}</div>`;
+            days += `<div class="currentMonth">${i}</div>`;
         }
         monthDayDivs.innerHTML = days;
     }
@@ -64,6 +66,10 @@ function renderCalendarView() {
         days += `<div class="next-date">${i}</div>`;
         monthDayDivs.innerHTML = days;
     }
+
+    document.querySelector('.days').addEventListener("click", function(e){
+        console.log(e.target.innerHTML + " " + e.target.classList );
+    })
 }
 
 function decreaseMonth() {
